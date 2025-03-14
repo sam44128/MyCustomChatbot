@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Control</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+        }
+        .on {
+            background-color: green;
+        }
+        .off {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chatbot Control Panel</h1>
+        <button id="toggleButton" class="off" onclick="toggleChatbot()">Turn On</button>
+    </div>
+
+    <script>
+        async function toggleChatbot() {
+            const button = document.getElementById('toggleButton');
+            const isOn = button.classList.contains('on');
+
+            const response = await fetch('/toggle', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ status: isOn ? 'off' : 'on' })
+            });
+
+            if (response.ok) {
+                button.classList.toggle('on');
+                button.classList.toggle('off');
+                button.textContent = isOn ? 'Turn On' : 'Turn Off';
+            } else {
+                alert('Failed to update chatbot status.');
+            }
+        }
+    </script>
+</body>
+</html>
