@@ -1,0 +1,11 @@
+greeting|hello
+greeting|hi
+greeting|hey
+greeting|good morning
+greeting|good evening
+goodbye|bye
+goodbye|see you
+goodbye|goodbye
+thanks|thank you
+thanks|thanks a lot
+thanks|appreciate it

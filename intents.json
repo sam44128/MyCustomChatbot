@@ -1,0 +1,25 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["Hello", "Hi", "Hey", "How are you?"],
+        "responses": ["Hey! How can I help you?", "Hello! What's up?", "Hi there!"]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["Bye", "See you later", "Goodbye"],
+        "responses": ["Goodbye! Have a great day!", "See you later!", "Bye! Come back soon."]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "Appreciate it"],
+        "responses": ["You're welcome!", "No problem!", "Glad I could help!"]
+      },
+      {
+        "tag": "whatsapp_auto_reply",
+        "patterns": ["Where is the owner?", "Is this Yash?", "Why are you not replying?"],
+        "responses": ["This message is sent by AI. The person will respond when available."]
+      }
+    ]
+  }
+  
